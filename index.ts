@@ -10,6 +10,10 @@ import { red, green, bold } from 'kolorist'
 import banner from './utils/banner'
 import { canSkipEmptying, emptyDir, isValidPackageName, toValidPackageName } from './utils/package'
 
+import { emitter } from './utils/templateEmitter'
+
+let _projectName = ''
+
 async function init() {
   console.log(`\n${banner}\n`)
 
@@ -147,6 +151,8 @@ async function init() {
     needsPrettier = argv['eslint-with-prettier']
   } = result
 
+  _projectName = packageName
+
   //   路径
   const root = path.join(cwd, targetDir)
   console.log('🚀 ~ file: index.ts ~ line 137 ~ init ~ root', root)
@@ -164,6 +170,8 @@ async function init() {
 init()
   .then(() => {
     console.log(`is init successfully`)
+
+    emitter(_projectName)
   })
   .catch((e) => {
     console.error(e)
