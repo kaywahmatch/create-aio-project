@@ -1,8 +1,8 @@
-# job-init-cli
+# create-aio-project
 
 job initialization cli
 
 ```shell
 # 格式化文件格式
-pnpm run format
+create-aio-project
 ```

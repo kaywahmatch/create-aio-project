@@ -1,10 +1,10 @@
 {
-  "name": "job-init-cli",
+  "name": "create-aio-project",
   "version": "1.0.0",
   "description": "job initialization cli",
   "type": "module",
   "bin": {
-    "job-init-cli": "outfile.cjs"
+    "create-aio-project": "outfile.cjs"
   },
   "files": [
     "outfile.cjs",
@@ -18,18 +18,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kaywahmatch/job-init-cli.git"
+    "url": "git+https://github.com/kaywahmatch/create-aio-project.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/kaywahmatch/job-init-cli/issues"
+    "url": "https://github.com/kaywahmatch/create-aio-project/issues"
   },
   "engines": {
     "node": "^14.18.0 || >=16.0.0"
   },
-  "homepage": "https://github.com/kaywahmatch/job-init-cli#readme",
+  "homepage": "https://github.com/kaywahmatch/create-aio-project#readme",
   "devDependencies": {
     "@types/eslint": "^8.4.6",
     "@types/node": "^18.11.3",

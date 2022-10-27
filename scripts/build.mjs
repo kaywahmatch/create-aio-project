@@ -38,8 +38,7 @@ await esbuild.build({
       setup({ onResolve, resolve }) {
         onResolve({ filter: /^prompts$/, namespace: 'file' }, async ({ importer, resolveDir }) => {
           // we can always use non-transpiled code since we support 14.16.0+
-        console.log("🚀 ~ file: build.mjs ~ line 44 ~ onResolve ~ importer", importer)
-        const result = await resolve('prompts/lib/index.js', { importer, resolveDir })
+          const result = await resolve('prompts/lib/index.js', { importer, resolveDir })
           return result
         })
       }
@@ -50,14 +49,16 @@ await esbuild.build({
         output: {
           file: 'LICENSE',
           template(allDependencies) {
-            // There's a bug in the plugin that it also includes the `create-vue` package itself
-            const dependencies = allDependencies.filter((d) => d.packageJson.name !== 'create-vue')
+            // There's a bug in the plugin that it also includes the `create-aio-project` package itself
+            const dependencies = allDependencies.filter(
+              (d) => d.packageJson.name !== 'create-aio-project'
+            )
             const licenseText =
-              `# create-vue core license\n\n` +
-              `create-vue is released under the MIT license:\n\n` +
+              `# create-aio-project core license\n\n` +
+              `create-aio-project is released under the MIT license:\n\n` +
               CORE_LICENSE +
               `\n## Licenses of bundled dependencies\n\n` +
-              `The published create-vue artifact additionally contains code with the following licenses:\n` +
+              `The published create-aio-project artifact additionally contains code with the following licenses:\n` +
               [...new Set(dependencies.map((dependency) => dependency.packageJson.license))].join(
                 ', '
               ) +
